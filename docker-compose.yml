@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  php:
+    tty: true # Enables debugging capabilities when attached to this container.
+    image: docker.io/bitnami/php-fpm:7.4
+    container_name: lenstoreint
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/app
+    links:
+      - db:db
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example

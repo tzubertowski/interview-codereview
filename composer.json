@@ -1,0 +1,12 @@
+{
+    "name": "lenstore/int",
+    "description": "Codereview app for lenstore",
+    "autoload": {
+        "psr-4": {
+            "Lenstore\\Int\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/collections": "^8.50"
+    }
+}
